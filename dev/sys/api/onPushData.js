@@ -17,7 +17,7 @@ async function push2Github_default(key, name, code, moduleId, context) {
       throw new Error();
   }
   const UserAgent = "kuafu-code";
-  const githubToken = "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";
+  const githubToken = "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";
   const url = `https://api.github.com/repos/kuafu-code/kuafu-code.github.io/contents/${path}`;
   let contentBlobSha = "";
   try {
@@ -30,8 +30,7 @@ async function push2Github_default(key, name, code, moduleId, context) {
       }
     });
     console.log("getFileResponse", getFileResponse);
-    const getFileResponseJson = JSON.parse(getFileResponse);
-    contentBlobSha = getFileResponseJson.sha;
+    contentBlobSha = getFileResponse.sha;
   } catch (e) {
   }
   const body = {
