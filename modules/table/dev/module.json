@@ -3,7 +3,7 @@
   "api": {
     "insertOne": {
       "url": "https://b6uz2ks6onqrduakhdkdl4l3yq0tndor.lambda-url.us-east-1.on.aws/",
-      "hash": "e2367f245921f348f317613aa65c92b1"
+      "hash": "2df703f8fac3a2406a903f6c66345846"
     }
   },
   "roles": {},
