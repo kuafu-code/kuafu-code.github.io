@@ -1,0 +1,33 @@
+{
+  "name": "demo",
+  "api": {
+    "onDemo": {
+      "url": "https://asfw7zhwitbb5v2tp4o6cmwjyi0kegsm.lambda-url.us-east-1.on.aws/",
+      "hash": "af7194f8342793ad5e80fb47a58424020102d571abd7ccec5b960310cd04cdd5"
+    }
+  },
+  "roles": {
+    "demo.role01": {
+      "name": "测试角色01",
+      "menu": {
+        "name": "我的应用",
+        "plugin": "myapps"
+      }
+    }
+  },
+  "plugin": {
+    "myapps": {
+      "hash": "c687546a925b6275b6d3cadf91b35e77aab0e39d6f74ceb593c600e6096dd6b1"
+    }
+  },
+  "tables": [
+    {
+      "id": "my_apps",
+      "columns": {
+        "appName": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}
