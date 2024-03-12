@@ -5,19 +5,11 @@ async function push2Github_default(target, name, code, moduleId, version, contex
     case "module":
       path = `modules/${moduleId}/${version}/module.json`;
       break;
-    case "role":
-    case "table":
     case "plugin":
       path = `modules/${moduleId}/${version}/${target}/${name}.json`;
       break;
     case "api-code":
       path = `modules/${moduleId}/${version}/api/${name}/code.js`;
-      break;
-    case "api-mock-reuqest":
-      path = `modules/${moduleId}/${version}/api/${name}/mock/request.json`;
-      break;
-    case "api-mock-response":
-      path = `modules/${moduleId}/${version}/api/${name}/mock/response.json`;
       break;
     default:
       throw new Error();
@@ -61,7 +53,10 @@ async function push2Github_default(target, name, code, moduleId, version, contex
     }
   );
   console.log("updateFileResponse", updateFileResponse);
-  return updateFileResponse;
+  if (updateFileResponse.download_url) {
+    return { code: 0 };
+  }
+  return { code: 1 };
 }
 
 // ../open-kuafu-system/src/action/onPushData.ts
