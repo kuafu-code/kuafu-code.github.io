@@ -23,8 +23,10 @@ async function push2Github_default(target, name, code, moduleId, version, contex
       throw new Error();
   }
   const UserAgent = "kuafu-code";
-  const githubToken = "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";
+  const githubToken = process.env.github_token;
   const url = `https://api.github.com/repos/kuafu-code/kuafu-code.github.io/contents/${path}`;
+  if (!githubToken)
+    throw new Error("Without githubToken");
   let contentBlobSha = "";
   try {
     const getFileResponse = await context.fetch(url, {
