@@ -3,7 +3,7 @@
   "api": {
     "onDemo": {
       "url": "https://asfw7zhwitbb5v2tp4o6cmwjyi0kegsm.lambda-url.us-east-1.on.aws/",
-      "hash": "a7f5d523d1b8521d9d843ce40221befe"
+      "hash": "affb08b73c590b547c8f7ab64200cf7a"
     }
   },
   "roles": {
@@ -17,7 +17,7 @@
   },
   "plugin": {
     "myapps": {
-      "hash": "f14892425ad5b4f160e3eb9c792df2fa"
+      "hash": "8f0ae6ed72b3a5fde0390cd48d7f66a2"
     }
   },
   "tables": [
