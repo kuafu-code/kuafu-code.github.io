@@ -1,5 +1,5 @@
 {
-  "id": "sys",
+  "name": "sys",
   "api": {
     "onPushData": {
       "url": "https://u4fezspb262i6ut2m4pspihnwm0filne.lambda-url.us-east-1.on.aws/",
