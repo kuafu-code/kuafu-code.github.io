@@ -6,7 +6,7 @@ async function push2Github_default(target, name, code, moduleId, version, contex
       path = `modules/${moduleId}/${version}/module.json`;
       break;
     case "plugin":
-      path = `modules/${moduleId}/${version}/${target}/${name}.json`;
+      path = `modules/${moduleId}/${version}/${target}/${name}.js`;
       break;
     case "api-code":
       path = `modules/${moduleId}/${version}/api/${name}/code.js`;
