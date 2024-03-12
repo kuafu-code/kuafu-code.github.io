@@ -1,0 +1,10 @@
+{
+  "id": "sys",
+  "api": {
+    "onPushData": {
+      "url": "https://u4fezspb262i6ut2m4pspihnwm0filne.lambda-url.us-east-1.on.aws/",
+      "hash": "56cc6095b5a84fcd68fbe19548eac7f69c7c75a2efd5286f83a0d939bbefe185"
+    }
+  },
+  "roles": {}
+}
