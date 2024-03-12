@@ -4,7 +4,7 @@ async function demo(params, context) {
   return { "statusCode": 200, "body": "Hello from auto Lambda!" };
 }
 
-// build/demo/api/onDemo.ts
+// build/modules/demo/api/onDemo.ts
 async function onDemo_default(event) {
   return await demo(event, __buildContext(event));
 }
