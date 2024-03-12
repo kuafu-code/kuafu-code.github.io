@@ -3,7 +3,7 @@
   "api": {
     "onPushData": {
       "url": "https://u4fezspb262i6ut2m4pspihnwm0filne.lambda-url.us-east-1.on.aws/",
-      "hash": "5902a2bc6fe6282aa74401636def2c3e2f4e7a6ac19fbf78632ceb4f124c51b6"
+      "hash": "11aa132aadcd4e1221f4232f4c2be650"
     }
   },
   "roles": {},
