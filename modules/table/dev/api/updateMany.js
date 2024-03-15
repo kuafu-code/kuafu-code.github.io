@@ -4,9 +4,7 @@ async function updateMany(params) {
 }
 
 // ../build/modules/table/api/updateMany.ts
-async function updateMany_default(event) {
-  return await updateMany(event.data, __buildContext(event));
-}
+var updateMany_default = updateMany;
 export {
   updateMany_default as default
 };
