@@ -4,9 +4,7 @@ async function insertOne(params) {
 }
 
 // ../build/modules/table/api/insertOne.ts
-async function insertOne_default(event) {
-  return await insertOne(event.data, __buildContext(event));
-}
+var insertOne_default = insertOne;
 export {
   insertOne_default as default
 };
