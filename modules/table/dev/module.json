@@ -3,35 +3,31 @@
   "api": {
     "insertOne": {
       "url": "https://b6uz2ks6onqrduakhdkdl4l3yq0tndor.lambda-url.us-east-1.on.aws/",
-      "hash": "de051f231ccf361e4f7aa277adff361b"
+      "hash": "88f633ac3916a2d2cfde6d967fff5d40"
     },
     "findOne": {
       "url": "https://xw6v7qnh2fiqxcfujzuyx6apny0liidl.lambda-url.us-east-1.on.aws/",
-      "hash": "c989e9ff739f15edefdb91af37348fe1"
+      "hash": "6c1943847992e4c5a63447a1b138695a"
     },
     "deleteMany": {
       "url": "https://kdwbwggepsm7w2u7rzerlt44340fiqov.lambda-url.us-east-1.on.aws/",
-      "hash": "221ece031855e2ada08fcd54a09eac91"
+      "hash": "fbc134b4ff663468ebcc49c580673157"
     },
     "deleteOne": {
       "url": "https://xwkkbkcbav6ccz2uitnexpk2ka0ecqtt.lambda-url.us-east-1.on.aws/",
-      "hash": "dadc1ebb5423f1e06def8d930ae36fde"
+      "hash": "88cbbf6a4297c28288d18038ecfd8686"
     },
     "findMany": {
       "url": "https://itm5y26sgqc4yliwcidpp2apma0khoii.lambda-url.us-east-1.on.aws/",
-      "hash": "5ec2d54c92ef0926d34c0ba9b365720d"
+      "hash": "45ca129c2d034be961c19bfecee1906f"
     },
     "updateMany": {
       "url": "https://uiz6nu3phbbcbssofi2vr5ye7m0aazso.lambda-url.us-east-1.on.aws/",
-      "hash": "5f4243158e1b1c6ccf6e1fd786157535"
+      "hash": "2b79d6afce43935b3a851d2226201431"
     },
     "updateOne": {
       "url": "https://o2oexpv45trrkfnao7yzchmh5y0xbrnp.lambda-url.us-east-1.on.aws/",
-      "hash": "14dfec76c42ff45ffcc119897b163d55"
-    },
-    "expireOne": {
-      "url": "https://jd4aujqsv6daqieqojalu7nlem0xdmpj.lambda-url.us-east-1.on.aws/",
-      "hash": "3afa459a5a72d08329ee3bbc0d9e1507"
+      "hash": "3eb2bcd7af2fe534003132d9338a5de0"
     }
   },
   "roles": {},
