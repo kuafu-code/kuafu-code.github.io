@@ -4,9 +4,7 @@ async function deleteOne(params) {
 }
 
 // ../build/modules/table/api/deleteOne.ts
-async function deleteOne_default(event) {
-  return await deleteOne(event.data, __buildContext(event));
-}
+var deleteOne_default = deleteOne;
 export {
   deleteOne_default as default
 };
