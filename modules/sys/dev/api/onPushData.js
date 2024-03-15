@@ -1,5 +1,5 @@
-// ../open-kuafu-system/src/abs/push2Github.ts
-async function push2Github_default(target, name, code, moduleId, version, context) {
+// ../../open-kuafu-system/src/sys/abs/push2Github.ts
+async function push2Github_default(target, name, code, moduleId, version, fetch2) {
   let path = "";
   switch (target) {
     case "module":
@@ -21,7 +21,7 @@ async function push2Github_default(target, name, code, moduleId, version, contex
     throw new Error("Without githubToken");
   let contentBlobSha = "";
   try {
-    const getFileResponse = await context.fetch(url, {
+    const getFileResponse = await fetch2(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ async function push2Github_default(target, name, code, moduleId, version, contex
   if (contentBlobSha) {
     body.sha = contentBlobSha;
   }
-  const updateFileResponse = await context.fetch(
+  const updateFileResponse = await fetch2(
     url,
     {
       method: "PUT",
@@ -59,19 +59,17 @@ async function push2Github_default(target, name, code, moduleId, version, contex
   return { code: 1 };
 }
 
-// ../open-kuafu-system/src/action/onPushData.ts
+// ../../open-kuafu-system/src/sys/action/onPushData.ts
 async function onPushData_default(event, context) {
   let body = event;
   if (event.requestContext) {
     body = JSON.parse(event.body);
   }
-  return await push2Github_default(body.key, body.id, body.code, body.module, "dev", context);
+  return await push2Github_default(body.key, body.id, body.code, body.module, "dev", fetch);
 }
 
-// build/modules/sys/api/onPushData.ts
-async function onPushData_default2(event) {
-  return await onPushData_default(event, __buildContext(event));
-}
+// ../build/modules/sys/api/onPushData.ts
+var onPushData_default2 = onPushData_default;
 export {
   onPushData_default2 as default
 };
