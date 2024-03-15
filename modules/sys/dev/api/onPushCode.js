@@ -75,12 +75,6 @@ import { getContext } from "./runtime.mjs";
 export default async function (event) {
   return await api(event.data, getContext(event));
 }`;
-var template_index_push_code = `
-import api from "./api.mjs";
-
-export default async function (event) {
-  return await api(event);
-}`;
 
 // ../../open-kuafu-system/src/sys/abs/pushCode.ts
 import { Lambda } from "@aws-sdk/client-lambda";
@@ -858,7 +852,7 @@ async function onPushCode_default(event) {
     FunctionName,
     {
       "api.mjs": template_api(body.code),
-      "index.mjs": body.runtime ? template_index_push_code : template_index,
+      "index.mjs": template_index,
       "runtime.mjs": body.runtime || fs.readFileSync("./runtime.mjs", { encoding: "utf8" })
     }
   );
