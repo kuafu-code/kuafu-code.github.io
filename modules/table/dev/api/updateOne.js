@@ -4,9 +4,7 @@ async function updateOne(params) {
 }
 
 // ../build/modules/table/api/updateOne.ts
-async function updateOne_default(event) {
-  return await updateOne(event.data, __buildContext(event));
-}
+var updateOne_default = updateOne;
 export {
   updateOne_default as default
 };
