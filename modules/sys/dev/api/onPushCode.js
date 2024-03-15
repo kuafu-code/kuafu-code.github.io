@@ -797,7 +797,7 @@ function zipSync(data, opts) {
 }
 
 // ../../open-kuafu-system/src/sys/abs/config.ts
-var AWS_REGION = "us-east-1";
+var AWS_REGION = "ap-east-1";
 
 // ../../open-kuafu-system/src/sys/abs/pushCode.ts
 async function pushCode_default(FunctionName, files, options) {
