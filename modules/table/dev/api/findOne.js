@@ -4,9 +4,7 @@ async function findOne(params) {
 }
 
 // ../build/modules/table/api/findOne.ts
-async function findOne_default(event) {
-  return await findOne(event.data, __buildContext(event));
-}
+var findOne_default = findOne;
 export {
   findOne_default as default
 };
