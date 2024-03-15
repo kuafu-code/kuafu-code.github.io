@@ -832,7 +832,8 @@ async function pushCode_default(FunctionName, files, options) {
       // 提供你的IAM角色的ARN
       Runtime: "nodejs20.x",
       // 运行环境
-      Publish: false
+      Publish: false,
+      Timeout: 60
     });
     await lambdaClient.addPermission({
       FunctionName,
