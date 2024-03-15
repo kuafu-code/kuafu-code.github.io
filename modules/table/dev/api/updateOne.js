@@ -1,6 +1,5 @@
 // ../../open-kuafu-system/src/table/action/table.ts
 async function updateOne(params) {
-  console.log("updateOne");
   return await TableActions.updateOne(params);
 }
 
