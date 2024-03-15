@@ -1,9 +1,41 @@
 {
   "name": "sys",
   "api": {
+    "onPushData": {
+      "url": "https://jqmkxcgwfe6s43wtznpdan6mei0tfirb.lambda-url.ap-east-1.on.aws/",
+      "hash": "a8c1ef10a7e58bf85011d2bb71b1aaa8"
+    },
+    "onPushCode": {
+      "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
+      "hash": "5365f2d092b67b2b42a3d98fa717d561"
+    },
     "insertOne": {
       "url": "https://llgsgk625axurccbwqrctwjshu0ucure.lambda-url.ap-east-1.on.aws/",
       "hash": "558e6e786bdae9db2d2cb48ae40c29f7"
+    },
+    "findOne": {
+      "url": "https://xx7qu7unhprp6pzbaegkmzwxwm0uglae.lambda-url.ap-east-1.on.aws/",
+      "hash": "684d0dbee4f3fbe124d4ea962260e3f0"
+    },
+    "deleteMany": {
+      "url": "https://ofuzspb2r2jqm6nox7oclz6r3e0nwemx.lambda-url.ap-east-1.on.aws/",
+      "hash": "45c4002d761672f87d334406a1b7abb3"
+    },
+    "deleteOne": {
+      "url": "https://623ryg6d4fim5cn3mvb2ftfbmu0dmzfm.lambda-url.ap-east-1.on.aws/",
+      "hash": "87b22d061b9d9080f5cc99781e57c78f"
+    },
+    "findMany": {
+      "url": "https://bm4p754oe7mfkv6evqqn6jxayy0ejxjj.lambda-url.ap-east-1.on.aws/",
+      "hash": "25e990ae2bba14eeecbf84bf70c5a501"
+    },
+    "updateMany": {
+      "url": "https://i7g44dbogs74o7lbg3qf4jdqc40xqqjl.lambda-url.ap-east-1.on.aws/",
+      "hash": "6dd3aae5f5c497fcaffb4a5bafb1de0e"
+    },
+    "updateOne": {
+      "url": "https://xhrv26xof2trwjrxrauy6l74oq0vernl.lambda-url.ap-east-1.on.aws/",
+      "hash": "33d2ac1306431ff9ce986aaefa152351"
     }
   },
   "roles": {},
