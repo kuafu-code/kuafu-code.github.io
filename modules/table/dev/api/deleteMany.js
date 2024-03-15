@@ -4,9 +4,7 @@ async function deleteMany(params) {
 }
 
 // ../build/modules/table/api/deleteMany.ts
-async function deleteMany_default(event) {
-  return await deleteMany(event.data, __buildContext(event));
-}
+var deleteMany_default = deleteMany;
 export {
   deleteMany_default as default
 };
