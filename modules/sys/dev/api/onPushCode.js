@@ -64,6 +64,11 @@ import fs from "fs";
 
 // ../../open-kuafu-system/src/sys/abs/templates.ts
 var template_api = (content) => `
+import { fetch, Table } from "./runtime.mjs";
+
+${content}
+`;
+var template_api_sys = (content) => `
 import { fetch, Table, TableActions } from "./runtime.mjs";
 
 ${content}
@@ -847,15 +852,15 @@ async function pushCode_default(FunctionName, files, options) {
 }
 
 // ../../open-kuafu-system/src/sys/action/onPushCode.ts
-async function onPushCode_default(body) {
-  await push2Github_default("api-code", body.id, body.code, body.module, "dev", fetch);
-  const FunctionName = `${body.module}_s_${body.id}`;
+async function onPushCode_default(params) {
+  await push2Github_default("api-code", params.id, params.code, params.module, "dev", fetch);
+  const FunctionName = `${params.module}_s_${params.id}`;
   return await pushCode_default(
     FunctionName,
     {
-      "api.mjs": template_api(body.code),
+      "api.mjs": params.module == "sys" ? template_api_sys(params.code) : template_api(params.code),
       "index.mjs": template_index,
-      "runtime.mjs": body.runtime || fs.readFileSync("./runtime.mjs", { encoding: "utf8" })
+      "runtime.mjs": params.runtime || fs.readFileSync("./runtime.mjs", { encoding: "utf8" })
     }
   );
 }
