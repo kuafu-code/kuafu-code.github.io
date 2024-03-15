@@ -848,7 +848,6 @@ async function pushCode_default(FunctionName, files, options) {
 
 // ../../open-kuafu-system/src/sys/action/onPushCode.ts
 async function onPushCode_default(body) {
-  console.log("onPushCode_default");
   await push2Github_default("api-code", body.id, body.code, body.module, "dev", fetch);
   const FunctionName = `${body.module}_s_${body.id}`;
   return await pushCode_default(
