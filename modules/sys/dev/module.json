@@ -1,13 +1,9 @@
 {
   "name": "sys",
   "api": {
-    "onPushData": {
-      "url": "https://jqmkxcgwfe6s43wtznpdan6mei0tfirb.lambda-url.ap-east-1.on.aws/",
-      "hash": "a8c1ef10a7e58bf85011d2bb71b1aaa8"
-    },
-    "onPushCode": {
-      "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
-      "hash": "5365f2d092b67b2b42a3d98fa717d561"
+    "insertOne": {
+      "url": "https://llgsgk625axurccbwqrctwjshu0ucure.lambda-url.ap-east-1.on.aws/",
+      "hash": "558e6e786bdae9db2d2cb48ae40c29f7"
     }
   },
   "roles": {},
