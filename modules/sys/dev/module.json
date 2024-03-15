@@ -7,7 +7,7 @@
     },
     "onPushCode": {
       "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
-      "hash": "5365f2d092b67b2b42a3d98fa717d561"
+      "hash": "fc72e79bd303bf15357a44aa9d40c945"
     },
     "insertOne": {
       "url": "https://llgsgk625axurccbwqrctwjshu0ucure.lambda-url.ap-east-1.on.aws/",
