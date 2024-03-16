@@ -7,9 +7,15 @@
     },
     "onPushCode": {
       "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
-      "hash": "35ec3833f5328e832d8a860ea351745a"
+      "hash": "49635727dd2031f0b4537189420ebbef"
     }
   },
   "roles": {},
-  "plugin": {}
+  "plugin": {},
+  "table": {
+    "table_export_demo": {
+      "url": "https://x2mouji4o43acgfncbqh3sssju0dsyen.lambda-url.ap-east-1.on.aws/",
+      "hash": "6309d4eb689778c0c19f32710dfb185f"
+    }
+  }
 }
