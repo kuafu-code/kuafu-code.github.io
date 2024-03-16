@@ -3,7 +3,7 @@
   "api": {
     "onPushCode": {
       "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
-      "hash": "ffcc430e5af3bf03ee288df9716d126f"
+      "hash": "6f5932aabb70b6476a500b870cc6dca3"
     },
     "onPushData": {
       "url": "https://jqmkxcgwfe6s43wtznpdan6mei0tfirb.lambda-url.ap-east-1.on.aws/",
@@ -11,7 +11,7 @@
     },
     "onGetUrl": {
       "url": "https://5hh4guwuazg2rxyhz4og5ldnua0mlucr.lambda-url.ap-east-1.on.aws/",
-      "hash": "ed3ebca8b8e2f5c2374e61826fcb1550"
+      "hash": "cb68f2342ca6ca19928e120764835763"
     }
   },
   "roles": {},
