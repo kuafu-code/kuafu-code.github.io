@@ -1,13 +1,17 @@
 {
   "name": "sys",
   "api": {
+    "onPushCode": {
+      "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
+      "hash": "ffcc430e5af3bf03ee288df9716d126f"
+    },
     "onPushData": {
       "url": "https://jqmkxcgwfe6s43wtznpdan6mei0tfirb.lambda-url.ap-east-1.on.aws/",
       "hash": "4980f88f6b1ed4d063928469214bb13c"
     },
-    "onPushCode": {
-      "url": "https://e36kzn6lcl6cukyszobhj7ynva0dngje.lambda-url.ap-east-1.on.aws/",
-      "hash": "6be4ff9f31f7aa304d9408cca0a4a185"
+    "onGetUrl": {
+      "url": "https://5hh4guwuazg2rxyhz4og5ldnua0mlucr.lambda-url.ap-east-1.on.aws/",
+      "hash": "ed3ebca8b8e2f5c2374e61826fcb1550"
     }
   },
   "roles": {},
