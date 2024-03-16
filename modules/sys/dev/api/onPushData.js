@@ -1,4 +1,4 @@
-// ../../open-kuafu-system/src/sys/abs/push2Github.ts
+// ../open-kuafu-system/server-sys/abs/push2Github.ts
 async function push2Github_default(target, name, code, moduleId, version, fetch2) {
   let path = "";
   switch (target) {
@@ -59,16 +59,12 @@ async function push2Github_default(target, name, code, moduleId, version, fetch2
   return { code: 1 };
 }
 
-// ../../open-kuafu-system/src/sys/action/onPushData.ts
-async function onPushData_default(event, context) {
-  let body = event;
-  if (event.requestContext) {
-    body = JSON.parse(event.body);
-  }
-  return await push2Github_default(body.key, body.id, body.code, body.module, "dev", fetch);
+// ../open-kuafu-system/server-sys/action/onPushData.ts
+async function onPushData_default(params) {
+  return await push2Github_default(params.key, params.id, params.code, params.module, "dev", fetch);
 }
 
-// ../build/modules/sys/api/onPushData.ts
+// build/modules/sys/api/onPushData.ts
 var onPushData_default2 = onPushData_default;
 export {
   onPushData_default2 as default
