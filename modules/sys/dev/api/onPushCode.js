@@ -69,7 +69,8 @@ var CommonExports = `
   string,
   STRING,
   number,
-  NUMBER,`.trim();
+  NUMBER,
+  onTableRequest,`.trim();
 var template_api = (content) => `
 import { 
   ${CommonExports}
@@ -81,7 +82,6 @@ var template_api_sys = (content) => `
 import { 
   ${CommonExports}
   SystemTable,
-  onTableRequest,
 } from "./runtime.mjs";
 
 ${content}
@@ -884,7 +884,7 @@ async function onPushCode_default(params) {
   return await pushCode_default(
     FunctionName,
     {
-      "api.mjs": params.module == "sys" ? template_api_sys(params.code) : template_api(params.code),
+      "api.mjs": params.module == "sys" && !params.kind ? template_api_sys(params.code) : template_api(params.code),
       "index.mjs": params.index || template_index(params.module, version),
       "runtime.mjs": params.runtime || fs.readFileSync("./runtime.mjs", { encoding: "utf8" })
     }
