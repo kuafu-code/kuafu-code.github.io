@@ -64,12 +64,12 @@ import fs from "fs";
 
 // ../open-kuafu-system/server-sys/abs/templates.ts
 var CommonExports = `
-fetch,
-Table,
-string,
-STRING,
-number,
-NUMBER,`;
+  fetch,
+  Table,
+  string,
+  STRING,
+  number,
+  NUMBER,`.trim();
 var template_api = (content) => `
 import { 
   ${CommonExports}
