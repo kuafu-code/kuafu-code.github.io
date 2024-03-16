@@ -81,6 +81,7 @@ var template_api_sys = (content) => `
 import { 
   ${CommonExports}
   SystemTable,
+  onTableRequest,
 } from "./runtime.mjs";
 
 ${content}
@@ -98,6 +99,14 @@ export default async function (event) {
   return await api(event.data, getContext(event, { id: "${moduleId}", version: "${moduleVersion}" } ));
   
 }`;
+var template_table = (meta) => `
+
+export default async function(params){
+
+  return await onTableRequest(${meta}, params);
+
+}
+`;
 
 // ../open-kuafu-system/server-sys/abs/pushCode.ts
 import { Lambda } from "@aws-sdk/client-lambda";
@@ -867,6 +876,9 @@ async function pushCode_default(FunctionName, files, options) {
 // ../open-kuafu-system/server-sys/action/onPushCode.ts
 async function onPushCode_default(params) {
   const version = "dev";
+  if (params.kind == "table") {
+    params.code = template_table(params.code);
+  }
   await push2Github_default("api-code", params.id, params.code, params.module, version, fetch);
   const FunctionName = `${params.module}_s_${params.id}`;
   return await pushCode_default(
