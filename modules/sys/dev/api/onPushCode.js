@@ -874,13 +874,14 @@ async function pushCode_default(FunctionName, files, options) {
 }
 
 // ../open-kuafu-system/server-sys/action/onPushCode.ts
+var functionName = (moduleId, api, version) => `${moduleId}_s_${api}`;
 async function onPushCode_default(params) {
   const version = "dev";
   if (params.kind == "table") {
     params.code = template_table(params.code);
   }
   await push2Github_default("api-code", params.id, params.code, params.module, version, fetch);
-  const FunctionName = `${params.module}_s_${params.id}`;
+  const FunctionName = functionName(params.module, params.id, version);
   return await pushCode_default(
     FunctionName,
     {
