@@ -819,6 +819,7 @@ function zipSync(data, opts) {
 
 // ../open-kuafu-system/server-sys/abs/config.ts
 var AWS_REGION = "ap-east-1";
+var functionName = (moduleId, api, version) => `${moduleId}_s_${api}`;
 
 // ../open-kuafu-system/server-sys/abs/pushCode.ts
 async function pushCode_default(FunctionName, files, options) {
@@ -874,7 +875,6 @@ async function pushCode_default(FunctionName, files, options) {
 }
 
 // ../open-kuafu-system/server-sys/action/onPushCode.ts
-var functionName = (moduleId, api, version) => `${moduleId}_s_${api}`;
 async function onPushCode_default(params) {
   const version = "dev";
   if (params.kind == "table") {
