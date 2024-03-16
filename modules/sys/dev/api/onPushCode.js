@@ -1,4 +1,4 @@
-// ../../open-kuafu-system/src/sys/abs/push2Github.ts
+// ../open-kuafu-system/server-sys/abs/push2Github.ts
 async function push2Github_default(target, name, code, moduleId, version, fetch2) {
   let path = "";
   switch (target) {
@@ -59,21 +59,33 @@ async function push2Github_default(target, name, code, moduleId, version, fetch2
   return { code: 1 };
 }
 
-// ../../open-kuafu-system/src/sys/action/onPushCode.ts
+// ../open-kuafu-system/server-sys/action/onPushCode.ts
 import fs from "fs";
 
-// ../../open-kuafu-system/src/sys/abs/templates.ts
+// ../open-kuafu-system/server-sys/abs/templates.ts
+var CommonExports = `
+fetch,
+Table.
+string,
+STRING,
+number,
+NUMBER,`;
 var template_api = (content) => `
-import { fetch, Table } from "./runtime.mjs";
+import { 
+  ${CommonExports}
+} from "./runtime.mjs";
 
 ${content}
 `;
 var template_api_sys = (content) => `
-import { fetch, Table, TableActions } from "./runtime.mjs";
+import { 
+  ${CommonExports}
+  SystemTable,
+} from "./runtime.mjs";
 
 ${content}
 `;
-var template_index = `
+var template_index = (moduleId, moduleVersion) => `
 import api from "./api.mjs";
 import { getContext } from "./runtime.mjs";
 
@@ -83,14 +95,14 @@ export default async function (event) {
     event = JSON.parse(event.body);
   };
 
-  return await api(event.data, getContext(event));
+  return await api(event.data, getContext(event, { id: "${moduleId}", version: "${moduleVersion}" } ));
   
 }`;
 
-// ../../open-kuafu-system/src/sys/abs/pushCode.ts
+// ../open-kuafu-system/server-sys/abs/pushCode.ts
 import { Lambda } from "@aws-sdk/client-lambda";
 
-// ../../../node_modules/fflate/esm/browser.js
+// ../../node_modules/fflate/esm/browser.js
 var u8 = Uint8Array;
 var u16 = Uint16Array;
 var i32 = Int32Array;
@@ -796,10 +808,10 @@ function zipSync(data, opts) {
   return out;
 }
 
-// ../../open-kuafu-system/src/sys/abs/config.ts
+// ../open-kuafu-system/server-sys/abs/config.ts
 var AWS_REGION = "ap-east-1";
 
-// ../../open-kuafu-system/src/sys/abs/pushCode.ts
+// ../open-kuafu-system/server-sys/abs/pushCode.ts
 async function pushCode_default(FunctionName, files, options) {
   const textEncoder = new TextEncoder();
   const toZip = {};
@@ -852,21 +864,22 @@ async function pushCode_default(FunctionName, files, options) {
   }
 }
 
-// ../../open-kuafu-system/src/sys/action/onPushCode.ts
+// ../open-kuafu-system/server-sys/action/onPushCode.ts
 async function onPushCode_default(params) {
-  await push2Github_default("api-code", params.id, params.code, params.module, "dev", fetch);
+  const version = "dev";
+  await push2Github_default("api-code", params.id, params.code, params.module, version, fetch);
   const FunctionName = `${params.module}_s_${params.id}`;
   return await pushCode_default(
     FunctionName,
     {
       "api.mjs": params.module == "sys" ? template_api_sys(params.code) : template_api(params.code),
-      "index.mjs": template_index,
+      "index.mjs": template_index(params.module, version),
       "runtime.mjs": params.runtime || fs.readFileSync("./runtime.mjs", { encoding: "utf8" })
     }
   );
 }
 
-// ../build/modules/sys/api/onPushCode.ts
+// build/modules/sys/api/onPushCode.ts
 var onPushCode_default2 = onPushCode_default;
 export {
   onPushCode_default2 as default
