@@ -65,7 +65,7 @@ import fs from "fs";
 // ../open-kuafu-system/server-sys/abs/templates.ts
 var CommonExports = `
 fetch,
-Table.
+Table,
 string,
 STRING,
 number,
@@ -873,7 +873,7 @@ async function onPushCode_default(params) {
     FunctionName,
     {
       "api.mjs": params.module == "sys" ? template_api_sys(params.code) : template_api(params.code),
-      "index.mjs": template_index(params.module, version),
+      "index.mjs": params.index || template_index(params.module, version),
       "runtime.mjs": params.runtime || fs.readFileSync("./runtime.mjs", { encoding: "utf8" })
     }
   );
